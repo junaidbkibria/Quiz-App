@@ -12,7 +12,7 @@ const AddQuestion = () => {
         <Box className="outerBox">
             <NavBar />
             {type === 'admin' ?
-                <Box className="container">
+                <Box>
                     <QuestionForm/>
                 </Box> : <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '90vh'}}>
                     <h2>Not Authorized</h2>
