@@ -11,7 +11,7 @@ const AnswerPage = () => {
     return (
         <Box className="outerBox">
             <NavBar />
-            {(type !== 'admin' || type !== 'user') ? <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '90vh' }}>
+            {type === "" ? <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '90vh' }}>
                 <h2>Not Authorized</h2>
             </Box> : <Box>
                 <AnswerForm />
