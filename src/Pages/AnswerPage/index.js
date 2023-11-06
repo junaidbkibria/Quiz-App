@@ -6,12 +6,16 @@ import NavBar from '../../Components/NavBar'
 import AnswerForm from './AnswerForm'
 
 const AnswerPage = () => {
+    const type = localStorage.getItem('currentUser') ? JSON.parse(localStorage.getItem('currentUser')).type : null;
+    console.log(type,'tyyype');
     return (
         <Box className="outerBox">
             <NavBar />
-            <Box>
-                <AnswerForm/>
-            </Box>
+            {(type !== 'admin' || type !== 'user') ? <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '90vh' }}>
+                <h2>Not Authorized</h2>
+            </Box> : <Box>
+                <AnswerForm />
+            </Box>}
         </Box>
     )
 }
