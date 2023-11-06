@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { lazy } from "react";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+
+const SignIn = lazy(() => import('./Pages/SignIn'))
+const AddQuestion = lazy(() => import('./Pages/AddQuestion'))
+const AnswerPage = lazy(() => import('./Pages/AnswerPage'))
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route>
+            <Route path="/" element={<SignIn />} />
+            <Route path="/add-question" element={<AddQuestion />} />
+            <Route path="/answer" element={<AnswerPage/>} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
