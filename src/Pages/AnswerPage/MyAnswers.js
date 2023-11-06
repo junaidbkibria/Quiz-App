@@ -9,8 +9,8 @@ import { Box } from '@mui/material';
 
 export default function MyAnswers({ data, answerFunction, id }) {
     let obj = data.find((item)=> item.email === JSON.parse(localStorage.getItem('currentUser')).email);
-    let reversed = obj.answers?.reverse();
-    console.log(obj);
+    let reversed = obj?.answers?obj.answers.reverse():[];
+    // console.log(obj);
     const editAnswer = (prev) =>{
         answerFunction(id,prev);
     }
