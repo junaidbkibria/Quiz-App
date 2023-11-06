@@ -9,7 +9,7 @@ const AnswerPage = () => {
     return (
         <Box className="outerBox">
             <NavBar />
-            <Box className="container">
+            <Box>
                 <AnswerForm/>
             </Box>
         </Box>
